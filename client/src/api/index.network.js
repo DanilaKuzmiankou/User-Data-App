@@ -1,8 +1,9 @@
 import axios from "axios";
+require('dotenv').config()
 
 export function getSecretRequest(bearer: string, url: string) {
     const promise = axios
-        .get(`${REACT_APP_SERVER_URL}${url}`, {
+        .get(`${process.env.REACT_APP_SERVER_URL}${url}`, {
 
             headers: {
                 Authorization: `Bearer ${bearer}`
@@ -15,7 +16,7 @@ export function getSecretRequest(bearer: string, url: string) {
 
 export function postSecretRequest(bearer: string, url: string, body: string) {
     const promise = axios
-        .post(`${REACT_APP_SERVER_URL}${url}`, body, {
+        .post(`${process.env.REACT_APP_SERVER_URL}${url}`, body, {
             headers: {
                 Authorization: `Bearer ${bearer}`,
                 'Content-Type': 'application/json'

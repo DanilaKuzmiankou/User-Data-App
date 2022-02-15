@@ -1,6 +1,8 @@
 .idea
+.env
+
 /client/node_modules
-/client/srs/utils/consts
+
 
 /coverage
 

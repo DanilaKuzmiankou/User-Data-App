@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone" // dependent on utc plugin
 import moment from "moment-timezone"
+require('dotenv').config()
 
 dayjs.extend(utc)
 dayjs.extend(timezone)
@@ -41,7 +42,7 @@ async function changeDateToUserTimezone(users: Array) {
 
 function formatTime(date: Date, timeZone: string) {
     let time = moment.tz(date, timeZone)
-    return time.format(REACT_APP_DATESTRING_FORMAT) /* timezone_string = "Australia/Sydney" */
+    return time.format(process.env.REACT_APP_DATESTRING_FORMAT) /* timezone_string = "Australia/Sydney" */
 }
 
 export async function getAllUsers(token: string) {
