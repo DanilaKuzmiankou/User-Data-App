@@ -2,7 +2,6 @@ const ApiError = require('../error/ApiError')
 const User = require('../models/Models').User
 const jwt = require('jsonwebtoken')
 const request = require("request");
-require('dotenv').config()
 
 
 const generateJwt = (id, email, name) => {

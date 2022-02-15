@@ -1,5 +1,4 @@
 import axios from "axios";
-require('dotenv').config()
 
 export function getSecretRequest(bearer: string, url: string) {
     const promise = axios

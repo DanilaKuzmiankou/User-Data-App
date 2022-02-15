@@ -3,7 +3,6 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone" // dependent on utc plugin
 import moment from "moment-timezone"
-require('dotenv').config()
 
 dayjs.extend(utc)
 dayjs.extend(timezone)
