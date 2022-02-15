@@ -1,0 +1,5 @@
+export const REACT_APP_AUTH0_DOMAIN='auth0-users-data-app.eu.auth0.com'
+export const REACT_APP_AUTH0_CLIENT_ID='OcVSJZDbR72Ui05ABdnqGRcX6mt5TGse'
+export const REACT_APP_AUTH0_AUDIENCE='https://express.users_app_server_side'
+export const REACT_APP_SERVER_URL='http://localhost:5000'
+export const REACT_APP_DATESTRING_FORMAT='D/MM/YYYY hh:mm A'
