@@ -22,7 +22,7 @@
     "react-scripts": "^5.0.0"
   },
   "scripts": {
-    "heroku-prebuild": "cd  && npm install --legacy-peer-deps && npm run build && cd .. && cd server && npm install",
+    "heroku-prebuild": "npm install --legacy-peer-deps && npm run build && cd .. && npm install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
