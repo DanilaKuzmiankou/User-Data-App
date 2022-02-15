@@ -1,5 +1,4 @@
 import axios from "axios";
-import {REACT_APP_SERVER_URL} from "../utils/consts";
 
 export function getSecretRequest(bearer: string, url: string) {
     const promise = axios
