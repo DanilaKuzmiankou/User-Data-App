@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app",
+    "start": "node index.js",
     "heroku-prebuild": "npm install && cd client && npm install --legacy-peer-deps && npm run build",
     "dev": "nodemon index.js"
   },

@@ -1,6 +1,5 @@
 import {getSecretRequest, postSecretRequest} from "../api/index.network";
 import dayjs from "dayjs";
-import {REACT_APP_DATESTRING_FORMAT} from "../utils/consts";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone" // dependent on utc plugin
 import moment from "moment-timezone"

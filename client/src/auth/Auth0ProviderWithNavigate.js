@@ -1,8 +1,6 @@
 import {Auth0Provider} from '@auth0/auth0-react'
 import {Children} from '../types/index.d'
-import "../utils/consts"
 
-import {REACT_APP_AUTH0_AUDIENCE, REACT_APP_AUTH0_CLIENT_ID, REACT_APP_AUTH0_DOMAIN} from "../utils/consts";
 
 const domain = REACT_APP_AUTH0_DOMAIN;
 const clientId = REACT_APP_AUTH0_CLIENT_ID;
