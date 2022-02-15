@@ -17,7 +17,7 @@
     "react-scripts": "^5.0.0"
   },
   "scripts": {
-    heroku-prebuild": "cd client && npm install && npm run build && cd .. && cd server && npm install",
+    "heroku-prebuild": "cd client && npm install && npm run build && cd .. && cd server && npm install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
