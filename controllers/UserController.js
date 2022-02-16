@@ -4,14 +4,6 @@ const jwt = require('jsonwebtoken')
 const request = require("request");
 
 
-const generateJwt = (id, email, name) => {
-    return jwt.sign(
-        {id, email, name},
-        process.env.SECRET_JWT_KEY,
-        {expiresIn: '1h'}
-    )
-}
-
 const getAllUsersFromAuth = (token) => {
     return new Promise(function (resolve, reject) {
             var options = {
@@ -115,10 +107,6 @@ class UserController {
         return res.status(200).json({message: 'user have been registered'})
     }
 
-    async check(req, res, next) {
-        const token = generateJwt(req.user.id, req.user.email, req.user.name)
-        return res.json({token})
-    }
 
     async getUsers(req, res) {
         let users;
