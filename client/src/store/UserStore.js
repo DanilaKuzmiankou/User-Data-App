@@ -33,6 +33,12 @@ export async function postUnblockUser(token: string, email: Array) {
 async function changeDateToUserTimezone(users: Array) {
     let clientTimeZone = dayjs.tz.guess()
     for (let i = 0; i < users.length; i++) {
+        let c = formatTime(new Date(users[i].updatedAt), clientTimeZone)
+        let d = users[i].updatedAt
+        console.log(c)
+        console.log(d)
+        console.log(typeof c)
+        console.log(typeof d)
         users[i].updatedAt = formatTime(new Date(users[i].updatedAt), clientTimeZone)
         users[i].createdAt = formatTime(new Date(users[i].createdAt), clientTimeZone)
     }
