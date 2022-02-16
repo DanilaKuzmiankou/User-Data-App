@@ -71,7 +71,7 @@ const getManagementApiJwt = () => {
                 body: JSON.stringify({
                     client_id: process.env.AUTH0_CLIENT_ID,
                     client_secret: process.env.AUTH0_CLIENT_SECRET,
-                    audience: "https://auth0-users-data-app.eu.auth0.com/api/v2/",
+                    audience: process.env.AUTH0_AUDIENCE,
                     grant_type: "client_credentials",
                 }),
             }
