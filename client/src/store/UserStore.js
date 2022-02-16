@@ -32,7 +32,7 @@ export async function postUnblockUser(token: string, email: Array) {
 
 async function changeDateToUserTimezone(users: Array) {
 
-    }
+
     return users
 }
 
