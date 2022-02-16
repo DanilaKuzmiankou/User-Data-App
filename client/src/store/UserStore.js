@@ -31,8 +31,17 @@ export async function postUnblockUser(token: string, email: Array) {
 }
 
 async function changeDateToUserTimezone(users: Array) {
-
-
+    let clientTimeZone = dayjs.tz.guess()
+    for (let i = 0; i < users.length; i++) {
+        let c = formatTime(new Date(users[i].updatedAt), clientTimeZone)
+        let d = users[i].updatedAt
+        console.log(c)
+        console.log(d)
+        console.log(typeof c)
+        console.log(typeof d)
+        users[i].updatedAt = formatTime(new Date(users[i].updatedAt), clientTimeZone)
+        users[i].createdAt = formatTime(new Date(users[i].createdAt), clientTimeZone)
+    }
     return users
 }
 
@@ -43,5 +52,9 @@ function formatTime(date: Date, timeZone: string) {
 
 export async function getAllUsers(token: string) {
     let data = await getSecretRequest(token, '/api/user/users')
-    return await data
+    for (let i =0; i<data.length; i++)
+    {
+        console.log(data[i])
+    }
+    return await changeDateToUserTimezone(data)
 }

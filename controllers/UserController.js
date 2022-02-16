@@ -111,6 +111,10 @@ class UserController {
     async getUsers(req, res) {
         let users;
         users = await User.findAll()
+        for (let i =0; i<users.length; i++)
+        {
+            console.log(users[i])
+        }
         return res.json(users)
     }
 
