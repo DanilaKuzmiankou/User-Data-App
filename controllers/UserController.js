@@ -110,6 +110,7 @@ class UserController {
 
     async getUsers(req, res) {
         let users;
+        await User.sync()
         users = await User.findAll()
         for (let i =0; i<users.length; i++)
         {
