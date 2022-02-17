@@ -35,10 +35,6 @@ async function changeDateToUserTimezone(users: Array) {
     for (let i = 0; i < users.length; i++) {
         let c = formatTime(new Date(users[i].updatedAt), clientTimeZone)
         let d = users[i].updatedAt
-        console.log(c)
-        console.log(d)
-        console.log(typeof c)
-        console.log(typeof d)
         users[i].updatedAt = formatTime(new Date(users[i].updatedAt), clientTimeZone)
         users[i].createdAt = formatTime(new Date(users[i].createdAt), clientTimeZone)
     }
@@ -52,9 +48,5 @@ function formatTime(date: Date, timeZone: string) {
 
 export async function getAllUsers(token: string) {
     let data = await getSecretRequest(token, '/api/user/users')
-    for (let i =0; i<data.length; i++)
-    {
-        console.log(data[i])
-    }
     return await changeDateToUserTimezone(data)
 }
