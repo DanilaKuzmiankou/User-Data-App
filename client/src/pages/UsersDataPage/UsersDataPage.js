@@ -19,9 +19,11 @@ export const UsersDataPage = withAuthenticationRequired(
 
             let token = await getAccessTokenSilently()
             try {
-                let username = user['https://user-data-site.example.com/username']
+                let username = user['https://crimson-truth-3166.us.auth0.com/username']
                 console.log("username:")
                 console.log(username)
+                console.log("token:")
+                console.log(token)
                 await registerNewUser(token, user.email, username)
             } catch (error) {
                 console.error('registerNewUser error:', error);
