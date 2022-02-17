@@ -7,7 +7,7 @@ export const HomePage = () => {
     const navigate = useNavigate()
 
     const routeChange = () => {
-        let path = `/usersPage`;
+        let path = `/userPage`;
         navigate(path);
     }
 

@@ -16,7 +16,7 @@ export const CustomNav = () => (
         <div className="navbar-collapse collapse w-100 navbar_auth_button" id="collapsingNavbar3">
             <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
                 <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip-disabled">To User Data!</Tooltip>}>
-                    <a href="/usersPage" className="navbar_users_data_button">User Data</a>
+                    <a href="/userPage" className="navbar_users_data_button">User Data</a>
                 </OverlayTrigger>
                 <AuthButton/>
             </ul>
