@@ -43,7 +43,7 @@ async function changeDateToUserTimezone(users: Array) {
 
 function formatTime(date: Date, timeZone: string) {
     let time = moment.tz(date, timeZone)
-    return time.format(process.env.REACT_APP_DATESTRING_FORMAT) /* timezone_string = "Australia/Sydney" */
+    return time.format(process.env.REACT_APP_DATESTRING_FORMAT).replace(/['"]+/g, ''); /* timezone_string = "Australia/Sydney" */
 }
 
 export async function getAllUsers(token: string) {
