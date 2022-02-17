@@ -1,14 +1,7 @@
 import {useAuth0, withAuthenticationRequired} from '@auth0/auth0-react'
 import React, {useEffect, useRef, useState} from "react";
 import {CustomBootstrapTable, CustomSpinner} from "../../components/index.components";
-import {
-    getAllUsers,
-    getUserInfoFromAuth0,
-    postBlockUser,
-    postDeleteUser,
-    postUnblockUser,
-    registerNewUser
-} from "../../store/UserStore";
+import {getAllUsers, postBlockUser, postDeleteUser, postUnblockUser, registerNewUser} from "../../store/UserStore";
 import {Button, ButtonGroup, Container, Navbar, OverlayTrigger, Tooltip} from "react-bootstrap";
 import "../../styles/App.css"
 import {Lock, Trash, Unlock} from "react-bootstrap-icons";
@@ -26,16 +19,9 @@ export const UsersDataPage = withAuthenticationRequired(
 
             let token = await getAccessTokenSilently()
             try {
-                let username = user['https://crimson-truth-3166.us.auth0.com/username']
-                console.log("username:")
+                let username = user['https://myapp.example.com/username']
+                console.log("username")
                 console.log(username)
-                console.log("preffered username:")
-                console.log(user.preferred_username)
-                console.log("token:")
-                console.log(token)
-                let newUser = await getUserInfoFromAuth0(token)
-                console.log("new User:")
-                console.log(newUser)
                 await registerNewUser(token, user.email, username)
             } catch (error) {
                 console.error('registerNewUser error:', error);

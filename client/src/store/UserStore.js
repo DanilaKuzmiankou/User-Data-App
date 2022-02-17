@@ -1,4 +1,4 @@
-import {getAuth0Request, getSecretRequest, postSecretRequest} from "../api/index.network";
+import {getSecretRequest, postSecretRequest} from "../api/index.network";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone" // dependent on utc plugin
@@ -10,10 +10,6 @@ dayjs.extend(timezone)
 export async function registerNewUser(token: string, email: string, name: string) {
     let body = JSON.stringify({email: email, name: name})
     return await postSecretRequest(token, '/api/user/register', body)
-}
-
-export async function getUserInfoFromAuth0(token: string) {
-    return await getAuth0Request(token)
 }
 
 export async function postDeleteUser(token: string, email: Array) {
