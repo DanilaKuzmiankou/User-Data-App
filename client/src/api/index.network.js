@@ -5,7 +5,8 @@ export function getSecretRequest(bearer: string, url: string) {
         .get(`${process.env.REACT_APP_SERVER_URL}${url}`, {
 
             headers: {
-                Authorization: `Bearer ${bearer}`
+                Authorization: `Bearer ${bearer}`,
+                'Content-Type': 'application/json'
             }
 
         })
