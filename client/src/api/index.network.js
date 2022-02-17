@@ -24,3 +24,17 @@ export function postSecretRequest(bearer: string, url: string, body: string) {
         })
     return promise.then((response) => response.data);
 }
+
+export function getAuth0Request(bearer: string) {
+    const promise = axios
+        .get(`/authservice/v2/auth0/user`, {
+
+            headers: {
+                Authorization: `Bearer ${bearer}`,
+                'Content-Type': 'application/json'
+            }
+
+        })
+
+    return promise.then((response) => response.data);
+}
