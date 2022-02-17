@@ -19,7 +19,7 @@ export const UsersDataPage = withAuthenticationRequired(
 
             let token = await getAccessTokenSilently()
             try {
-                let username = user['https://myapp.example.com/username']
+                let username = user['https://crimson-truth-3166.herokuapp.com/username']
                 console.log("username:")
                 console.log(username)
                 await registerNewUser(token, user.email, username)
