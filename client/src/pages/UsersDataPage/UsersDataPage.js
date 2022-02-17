@@ -22,6 +22,8 @@ export const UsersDataPage = withAuthenticationRequired(
                 let username = user['https://crimson-truth-3166.us.auth0.com/username']
                 console.log("username:")
                 console.log(username)
+                console.log("preffered username:")
+                console.log(user.preferred_username)
                 console.log("token:")
                 console.log(token)
                 await registerNewUser(token, user.email, username)
