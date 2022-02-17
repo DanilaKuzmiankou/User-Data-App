@@ -101,7 +101,7 @@ class UserController {
             candidate.changed('updatedAt', true)
             candidate.changed('name', true)
             await candidate.save({silent: false})
-            return res.status(500).json({message: 'user have been registered'})
+            return res.status(200).json({message: 'user already registered'})
         }
         const user = await User.create({email, name})
         return res.status(200).json({message: 'user have been registered'})
